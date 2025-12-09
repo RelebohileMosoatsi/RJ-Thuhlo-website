@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RJ THUHLO Chambers - Premier Legal Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-dark: #0A2E1F;
+            --primary-green: #1B4D3E;
+            --secondary-green: #2D5A4A;
+            --accent-gold: #C5A047;
+            --light-gold: #E8D9A9;
+            --pure-white: #FFFFFF;
+            --off-white: #F8F8F8;
+            --light-gray: #E9E9E9;
+            --text-dark: #222222;
+            --text-light: #666666;
+            --shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.12);
+            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--pure-white);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: var(--pure-white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        header.scrolled {
+            padding: 5px 0;
+            background-color: rgba(255, 255, 255, 0.98);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            transition: var(--transition);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        /* ----- Logo Image Styling ----- */
+.logo-img {
+    height: 55px; /* adjust height here */
+    width: auto;
+    margin-right: 12px;
+    object-fit: contain;
+    display: block;
+}
+
+/* Slightly smaller when header is scrolled */
+header.scrolled .logo-img {
+    height: 45px;
+}
+
+        
+        .logo-icon {
+            color: var(--accent-gold);
+            font-size: 2.5rem;
+            margin-right: 12px;
+        }
+        
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+        
+        .logo-text span {
+            color: var(--accent-gold);
+        }
+        
+        .logo-tagline {
+            display: block;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 400;
+            color: var(--text-light);
+            letter-spacing: 1.5px;
+            margin-top: 2px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--primary-dark);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+        }
+        
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-gold);
+            transition: var(--transition);
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent-gold);
+        }
+        
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+        
+        nav ul li a.active {
+            color: var(--accent-gold);
+        }
+        
+        nav ul li a.active:after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(10, 46, 31, 0.85), rgba(27, 77, 62, 0.9)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--pure-white);
+            padding: 180px 0 100px;
+            margin-top: 80px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: var(--light-gray);
+        }
+        
+        .hero-accent {
+            color: var(--light-gold);
+            font-weight: 600;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background-color: var(--accent-gold);
+            color: var(--primary-dark);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(197, 160, 71, 0.2);
+        }
+        
+        .btn:hover {
+            background-color: var(--light-gold);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(197, 160, 71, 0.3);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--accent-gold);
+            color: var(--accent-gold);
+            margin-left: 15px;
+        }
+        
+        .btn-outline:hover {
+            background-color: rgba(197, 160, 71, 0.1);
+            color: var(--light-gold);
+        }
+        
+        /* Sections */
+        section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-gold);
+        }
+        
+        .section-title p {
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        
+        /* Practice Areas */
+        .practice-areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .practice-card {
+            background-color: var(--pure-white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            height: 100%;
+        }
+        
+        .practice-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .practice-icon {
+            background-color: var(--primary-green);
+            color: var(--accent-gold);
+            font-size: 2.5rem;
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .practice-content {
+            padding: 30px;
+        }
+        
+        .practice-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+        }
+        
+        .practice-content p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+        
+        .practice-link {
+            color: var(--accent-gold);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            transition: var(--transition);
+        }
+        
+        .practice-link i {
+            margin-left: 8px;
+            transition: var(--transition);
+        }
+        
+        .practice-link:hover {
+            color: var(--primary-green);
+        }
+        
+        .practice-link:hover i {
+            transform: translateX(5px);
+        }
+        
+        /* Attorneys */
+        .attorneys-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            visibility: hidden;
+            display: none;
+        }
+        
+        .attorney-card {
+            background-color: var(--pure-white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            
+        }
+        
+        .attorney-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .attorney-img {
+            height: 300px;
+            background-color: var(--light-gray);
+            overflow: hidden;
+        }
+        
+        .attorney-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .attorney-card:hover .attorney-img img {
+            transform: scale(1.05);
+        }
+        
+        .attorney-info {
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .attorney-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+            color: var(--primary-dark);
+        }
+        
+        .attorney-info .title {
+            color: var(--accent-gold);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+        
+        .attorney-info p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+        
+        .attorney-contact {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .attorney-contact a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--off-white);
+            color: var(--primary-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: var(--transition);
+            visibility: hidden;
+        }
+        
+        .attorney-contact a:hover {
+            background-color: var(--accent-gold);
+            color: var(--pure-white);
+            transform: translateY(-3px);
+        }
+        
+        /* Contact Form */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+            align-items: start;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+        }
+        
+        .contact-details {
+            margin-top: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            margin-bottom: 25px;
+            align-items: flex-start;
+        }
+        
+        .contact-icon {
+            background-color: rgba(27, 77, 62, 0.1);
+            color: var(--primary-green);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .contact-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--primary-dark);
+        }
+        
+        .contact-text p {
+            color: var(--text-light);
+        }
+        
+        .contact-form {
+            background-color: var(--off-white);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid var(--light-gray);
+            border-radius: 4px;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 0 3px rgba(197, 160, 71, 0.1);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--pure-white);
+            padding: 80px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            color: var(--pure-white);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent-gold);
+        }
+        
+        .footer-column p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-gold);
+            padding-left: 5px;
+        }
+        
+        .footer-links a i {
+            margin-right: 10px;
+            font-size: 0.8rem;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 15px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: var(--pure-white);
+                box-shadow: var(--shadow);
+                padding: 20px;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: var(--transition);
+            }
+            
+            nav.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav ul li {
+                margin: 0 0 15px 0;
+            }
+            
+            .hero {
+                padding: 150px 0 80px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .practice-areas-grid,
+            .attorneys-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                display: block;
+                width: 100%;
+                margin-bottom: 15px;
+            }
+            
+            .btn-outline {
+                margin-left: 0;
+            }
+            
+            section {
+                padding: 70px 0;
+            }
+        }
+        
+        /* Additional Effects */
+        .gold-accent {
+            color: var(--accent-gold);
+        }
+        
+        .divider {
+            height: 1px;
+            background-color: var(--light-gray);
+            margin: 40px 0;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--accent-gold);
+            color: var(--primary-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background-color: var(--light-gold);
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header id="header">
+        <div class="container header-container">
+           <div class="logo">
+            <img src="assets/logo_clean.svg" alt="RJ Thuhlo Chambers Logo" class="logo-img">
+            <div>
+
+                <div class="logo-tagline"></div>
+                 </div>
+                    </div>
+
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#practices">Practice Areas</a></li>
+                    <li><a href="#attorneys">Attorneys</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#contact" class="btn" style="padding: 10px 25px; margin-left: 15px;">Schedule Consultation</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Defending Your Rights With <span class="hero-accent">Precision & Integrity</span></h1>
+            <p>RJ THUHLO Chambers has provided exceptional legal counsel to individuals and corporations, navigating complex legal landscapes with strategic expertise and unwavering dedication to our clients' success.</p>
+            <a href="#contact" class="btn">Get Legal Advice</a>
+            <a href="#practices" class="btn btn-outline">Our Practice Areas</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Legal Legacy</h2>
+                <p>With a foundation built on integrity, expertise, and client-focused service, RJ THUHLO Chambers has established itself as a premier legal practice renowned for excellence in advocacy and strategic counsel.</p>
+            </div>
+            
+            <div class="about-content" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 50px; align-items: center;">
+                <div>
+                    <h3 style="font-size: 1.8rem; margin-bottom: 20px; color: var(--primary-dark);">A Tradition of Excellence in Legal Representation</h3>
+                    <p style="margin-bottom: 20px; color: var(--text-light);">Founded in 2023 by Relebohile Justice. Thuhlo, our firm has grown from a solo practice to a full-service legal chambers with a team of specialized attorneys. We combine traditional values with innovative legal strategies to deliver outstanding results.</p>
+                    <p style="margin-bottom: 20px; color: var(--text-light);">Our approach is characterized by meticulous preparation, thorough understanding of our clients' needs, and relentless pursuit of justice. We believe that every client deserves personalized attention and robust representation.</p>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 30px;">
+                        <div style="text-align: center;">
+                            <h3 style="font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 5px;">10+</h3>
+                            <p style="color: var(--text-light); font-size: 0.9rem;">Services available</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <h3 style="font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 5px;">100+</h3>
+                            <p style="color: var(--text-light); font-size: 0.9rem;">Cases Resolved</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <h3 style="font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 5px;">98%</h3>
+                            <p style="color: var(--text-light); font-size: 0.9rem;">Client Satisfaction</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div style="background-color: var(--primary-green); color: var(--pure-white); padding: 40px; border-radius: 8px; box-shadow: var(--shadow);">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 20px; color: var(--light-gold);">Our Core Principles</h3>
+                        <ul style="list-style: none;">
+                            <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
+                                <i class="fas fa-check" style="color: var(--accent-gold); margin-right: 10px; margin-top: 5px;"></i>
+                                <span><strong>Integrity:</strong> Unwavering ethical standards in all our dealings</span>
+                            </li>
+                            <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
+                                <i class="fas fa-check" style="color: var(--accent-gold); margin-right: 10px; margin-top: 5px;"></i>
+                                <span><strong>Excellence:</strong> Commitment to the highest quality legal work</span>
+                            </li>
+                            <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
+                                <i class="fas fa-check" style="color: var(--accent-gold); margin-right: 10px; margin-top: 5px;"></i>
+                                <span><strong>Client-Centered:</strong> Tailored strategies for each client's unique needs</span>
+                            </li>
+                            <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
+                                <i class="fas fa-check" style="color: var(--accent-gold); margin-right: 10px; margin-top: 5px;"></i>
+                                <span><strong>Innovation:</strong> Creative solutions to complex legal challenges</span>
+                            </li>
+                            <li style="display: flex; align-items: flex-start;">
+                                <i class="fas fa-check" style="color: var(--accent-gold); margin-right: 10px; margin-top: 5px;"></i>
+                                <span><strong>Accountability:</strong> Taking responsibility for our clients' outcomes</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practice Areas Section -->
+    <section id="practices" style="background-color: var(--off-white);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Practice Areas</h2>
+                <p>We offer comprehensive legal services across multiple specialties, each handled by attorneys with deep expertise in their respective fields.</p>
+            </div>
+            
+            <div class="practice-areas-grid">
+                <!-- Practice Area 1 -->
+                <div class="practice-card">
+                    <div class="practice-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <div class="practice-content">
+                        <h3>Corporate Law</h3>
+                        <p>From startups to multinational corporations, we provide strategic counsel on formation, governance, mergers & acquisitions, compliance, and commercial transactions.</p>
+                        <a href="https://www.lloydlawcollege.edu.in/blog/what-is-corporate-law.html" class="practice-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Practice Area 2 -->
+                <div class="practice-card">
+                    <div class="practice-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="practice-content">
+                        <h3>Litigation & Dispute Resolution</h3>
+                        <p>Aggressive representation in civil, commercial, and appellate litigation. We pursue favorable outcomes through negotiation, mediation, or courtroom advocacy.</p>
+                        <a href="https://www.law.ac.uk/employability/legal-practice-areas/civil-litigation-dispute-resolution-law/" class="practice-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Practice Area 3 -->
+                <div class="practice-card">
+                    <div class="practice-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="practice-content">
+                        <h3>Real Estate Law</h3>
+                        <p>Comprehensive services for residential and commercial real estate transactions, development projects, leasing, zoning, and property disputes.</p>
+                        <a href="https://www.findlaw.com/realestate.html" class="practice-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Practice Area 4 -->
+                <div class="practice-card">
+                    <div class="practice-icon">
+                        <i class="fas fa-balance-scale-left"></i>
+                    </div>
+                    <div class="practice-content">
+                        <h3>Intellectual Property</h3>
+                        <p>Protection and enforcement of patents, trademarks, copyrights, and trade secrets. We help innovators secure and commercialize their intellectual assets.</p>
+                        <a href="https://www.law.cornell.edu/wex/intellectual_property" class="practice-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Practice Area 5 -->
+                <div class="practice-card">
+                    <div class="practice-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <div class="practice-content">
+                        <h3>Employment Law</h3>
+                        <p>Guidance on workplace policies, discrimination claims, wage disputes, executive compensation, and labor relations for employers and employees.</p>
+                        <a href="https://www.law.ac.uk/employability/legal-practice-areas/employment-law/" class="practice-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Practice Area 6 -->
+                <div class="practice-card">
+                    <div class="practice-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="practice-content">
+                        <h3>Family Law</h3>
+                        <p>Sensitive handling of divorce, child custody, adoption, and prenuptial agreements with a focus on achieving amicable resolutions when possible.</p>
+                        <a href="https://www.law.ac.uk/employability/legal-practice-areas/family-law/" class="practice-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Attorneys Section -->
+    <section id="attorneys">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Legal Team</h2>
+                <p>Our attorneys bring diverse expertise, deep experience, and a shared commitment to achieving exceptional outcomes for our clients.</p>
+            </div>
+            
+            <div class="attorneys-grid">
+                <!-- Attorney 1 -->
+                <div class="attorney-card">
+                    <div class="attorney-img">
+                        <img src="" alt="Relebohile Justice. Thuhlo">
+                    </div>
+                    <div class="attorney-info">
+                        <h3>Relebohile Justice Thuhlo</h3>
+                        <div class="title">Founding Partner</div>
+                        <p>Mr. Thuhlo has argued before state and federal appellate courts and specializes in complex commercial disputes.</p>
+                        <div class="attorney-contact">
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                            <a href="#"><i class="fas fa-phone"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Attorney 2 -->
+                <div class="attorney-card">
+                    <div class="attorney-img">
+                        <img src="" alt="Kananelo Hlompho. Hlaele">
+                    </div>
+                    <div class="attorney-info">
+                        <h3>Kananelo Hlompho. Hlaele</h3>
+                        <div class="title">Corporate Law Partner</div>
+                        <p>Former in-house counsel for a Fortune 500 company, Mr Kananelo Hlompho. Hlaele advises on M&A, corporate governance, and international business transactions.</p>
+                        <div class="attorney-contact">
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                            <a href="#"><i class="fas fa-phone"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Attorney 3 -->
+                <div class="attorney-card">
+                    <div class="attorney-img">
+                        <img src="" alt="Motlatsi Mofolo">
+                    </div>
+                    <div class="attorney-info">
+                        <h3>Motlatsi Mofolo</h3>
+                        <div class="title">Intellectual Property Partner</div>
+                        <p>Registered patent attorney with technical background in engineering. He manages global IP portfolios for technology and pharmaceutical companies.</p>
+                        <div class="attorney-contact">
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                            <a href="#"><i class="fas fa-phone"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Attorney 4 -->
+                <div class="attorney-card">
+                    <div class="attorney-img">
+                        <img src="" alt="UNKWNOWN">
+                    </div>
+                    <div class="attorney-info">
+                        <h3>UNKWNOWN</h3>
+                        <div class="title">Real Estate Partner</div>
+                        <p>Specializes in commercial real estate development, financing, and land use. She represents institutional investors and developers in complex transactions.</p>
+                        <div class="attorney-contact">
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                            <a href="#"><i class="fas fa-phone"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" style="background-color: var(--off-white);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Our Legal Team</h2>
+                <p>Schedule a confidential consultation to discuss your legal needs and learn how we can assist you.</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p>Our team is ready to provide the expert legal guidance you need. Contact us to schedule a consultation or learn more about our services.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Our Office</h4>
+                                <p>R.J. THUHLO CHAMBERS<br>MAFAFA-OLD TEBA BUILDING<br>NEXT TO STADIUM FOOD COURT<br>Maseru, Lesotho</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Phone Number</h4>
+                                <p>+266 5646 7802<br>+266 5313 0379 (Emergency)<br>+266 5033 1738<br>+266 6330 4977</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email Address</h4>
+                                <p>hlomphohlaele@gmail.com<br>reythuhlo.rt@gmail.com<br>motlatsimofolo19@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Business Hours</h4>
+                                <p>Monday - Friday: 8:00 AM - 5:00 PM<br>Saturday: 9:00 AM - 1:00 PM<br>Emergency consultations available</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="Enter your full name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" placeholder="Enter your email address" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" class="form-control" required>
+                                <option value="" disabled selected>Select a legal matter</option>
+                                <option value="corporate">Corporate Law</option>
+                                <option value="litigation">Litigation</option>
+                                <option value="realestate">Real Estate</option>
+                                <option value="ip">Intellectual Property</option>
+                                <option value="employment">Employment Law</option>
+                                <option value="family">Family Law</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" class="form-control" placeholder="Briefly describe your legal matter" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>RJ THUHLO Chambers</h3>
+                    <p>Providing exceptional legal counsel with integrity, expertise, and dedication. Your trusted partner in navigating complex legal challenges.</p>
+                    <div style="display: flex; gap: 15px; margin-top: 20px;">
+                        <a href="#" style="color: var(--pure-white); font-size: 1.2rem;"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" style="color: var(--pure-white); font-size: 1.2rem;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="color: var(--pure-white); font-size: 1.2rem;"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="#practices"><i class="fas fa-chevron-right"></i> Practice Areas</a></li>
+                        <li><a href="#attorneys"><i class="fas fa-chevron-right"></i> Our Team</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Practice Areas</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://www.lloydlawcollege.edu.in/blog/what-is-corporate-law.html"><i class="fas fa-chevron-right"></i> Corporate Law</a></li>
+                        <li><a href="https://www.law.ac.uk/employability/legal-practice-areas/civil-litigation-dispute-resolution-law/"><i class="fas fa-chevron-right"></i> Litigation</a></li>
+                        <li><a href="https://www.findlaw.com/realestate.html"><i class="fas fa-chevron-right"></i> Real Estate</a></li>
+                        <li><a href="https://www.law.cornell.edu/wex/intellectual_property"><i class="fas fa-chevron-right"></i> Intellectual Property</a></li>
+                        <li><a href="https://www.law.ac.uk/employability/legal-practice-areas/employment-law/"><i class="fas fa-chevron-right"></i> Employment Law</a></li>
+                    </ul>
+                </div>
+                
+                
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for legal insights and firm updates.</p>
+                    <div style="margin-top: 20px;">
+                        <input type="email" placeholder="Your email address" style="width: 100%; padding: 12px; border-radius: 4px; border: none; margin-bottom: 10px;">
+                        <button class="btn" style="width: 100%; padding: 12px;">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 RJ THUHLO Chambers. All rights reserved. | Legal Disclaimer | Privacy Policy</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#home" class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            mobileMenuBtn.innerHTML = mainNav.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            // Back to top button visibility
+            const backToTop = document.getElementById('backToTop');
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            
+            // In a real implementation, you would send this data to a server
+            // For now, we'll show a success message
+            alert(`Thank you, ${name}! Your consultation request has been received. We will contact you at ${email} within 24 hours to discuss your ${subject} matter.`);
+            
+            // Reset form
+            contactForm.reset();
+        });
+        
+        // Set current year in footer (optional)
+        document.addEventListener('DOMContentLoaded', function() {
+            const yearSpan = document.querySelector('.copyright p');
+            if (yearSpan) {
+                yearSpan.innerHTML = yearSpan.innerHTML.replace('2023', new Date().getFullYear());
+            }
+        });
+    </script>
+</body>
+</html>
